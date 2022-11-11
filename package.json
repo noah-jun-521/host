@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "NODE_ENV=development webpack serve --port 3000  --open",
     "serve-prod": "NODE_ENV=production webpack serve --port 3000  --open",
-    "build": "webpack --mode production"
+    "build": "NODE_ENV=production webpack"
   },
   "author": "",
   "license": "ISC",
