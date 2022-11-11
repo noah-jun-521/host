@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Index from './routes';
-import CRA from './routes/CRA';
+import CreateReactApp from './routes/CRA';
 import Root from './routes/root';
 import TodoReact from './routes/TodoReact';
 import TodoVue from './routes/TodoVue';
@@ -17,16 +17,16 @@ const router = createBrowserRouter([
         element: <Index />,
       },
       {
+        path: "/cra",
+        element: <CreateReactApp />,
+      },
+      {
         path: "/todo-react",
         element: <TodoReact />,
       },
       {
         path: "/todo-vue3",
         element: <TodoVue />,
-      },
-      {
-        path: "/cra",
-        element: <CRA />,
       },
     ],
   },
