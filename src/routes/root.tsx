@@ -19,6 +19,9 @@ const Root = () => {
             <li>
               <Link to="todo-vue3">Todo Application (Vue 3)</Link>
             </li>
+            <li>
+              <Link to="old-react">Old React - v16.4.0</Link>
+            </li>
           </ul>
         </nav>
       </div>

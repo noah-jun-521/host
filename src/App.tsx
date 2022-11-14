@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Index from './routes';
 import CreateReactApp from './routes/CRA';
+import OldReact from './routes/OldReact';
 import Root from './routes/root';
 import TodoReact from './routes/TodoReact';
 import TodoVue from './routes/TodoVue';
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/todo-vue3",
         element: <TodoVue />,
+      },
+      {
+        path: "/old-react",
+        element: <OldReact />,
       },
     ],
   },

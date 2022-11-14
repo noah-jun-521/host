@@ -7,16 +7,18 @@ const deps = require("./package.json").dependencies;
 
 const { NODE_ENV = "development" } = process.env;
 
-let todoBase, remoteCRABase, remoteVue3Base;
+let remote_react_todo, remote_cra, remote_vue3, remote_old_react;
 
 if (NODE_ENV === "development") {
-  todoBase = "http://localhost:3001";
-  remoteCRABase = "http://localhost:3002";
-  remoteVue3Base = "http://localhost:3003";
+  remote_react_todo = "http://localhost:3001";
+  remote_cra = "http://localhost:3002";
+  remote_vue3 = "http://localhost:3003";
+  remote_old_react = "http://localhost:3004";
 } else {
   todoBase = "https://remote-react-todo.vercel.app/";
   remoteCRABase = "https://remote-cra.vercel.app/";
   remoteVue3Base = "https://remote-vue3.vercel.app/";
+  remote_old_react = "http://localhost:3004";
 }
 
 module.exports = {
@@ -35,9 +37,10 @@ module.exports = {
     }),
     new ModuleFederationPlugin({
       remotes: {
-        remote_react_todo: `remote_react_todo@${todoBase}/remoteEntry.js`,
-        remote_cra: `remote_cra@${remoteCRABase}/remoteEntry.js`,
-        remote_vue3: `remote_vue3@${remoteVue3Base}/remoteEntry.js`,
+        remote_react_todo: `remote_react_todo@${remote_react_todo}/remoteEntry.js`,
+        remote_cra: `remote_cra@${remote_cra}/remoteEntry.js`,
+        remote_vue3: `remote_vue3@${remote_vue3}/remoteEntry.js`,
+        remote_old_react: `remote_old_react@${remote_old_react}/remoteEntry.js`,
       },
       shared: {
         ...deps,
